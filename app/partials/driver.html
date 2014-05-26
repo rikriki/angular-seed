@@ -1,0 +1,48 @@
+<section id="main">as
+  <a href="./#/drivers"><- Back to drivers list</a>
+  <nav id="secondary" class="main-nav">
+    <div class="driver-picture">
+      <div class="avatar">
+        <img ng-show="driver" src="img/drivers/{{driver.Driver.driverId}}.png" />
+        <img ng-show="driver" src="img/flags/{{driver.Driver.nationality}}.png" /><br/>
+        {{driver.Driver.givenName}} {{driver.Driver.familyName}}
+      </div>
+    </div>
+    <div class="driver-status">
+      Country: {{driver.Driver.nationality}}   <br/>
+      <a href="{{driver.Constructors[0].url}}"> Team: {{driver.Constructors[0].name}}</a><br/>
+      Birth: {{driver.Driver.dateOfBirth}}<br/>
+      Team Origin: {{driver.Constructors[0].nationality}}<br/>
+      <a href="{{driver.Driver.url}}" target="_blank">Biography</a>
+    </div>
+  </nav>
+
+ 
+
+</section>
+<section id="drivingRaces">
+  <h2>Driver Races</h2>
+
+  <table ng-repeat="races in racesList">
+    <tr>
+      <td>Race Name</td>
+      <td>{{races.raceName }} ' {{races.season}}</td>
+    </tr>
+    <tr>
+      <td>Circuit </td>
+      <td>{{races.Circuit.circuitName}}, {{races.Circuit.Location.locality}} - {{races.Circuit.Location.country}}</td>
+    </tr>
+    <tr>
+      <td>Results</td>
+      <td>Positon :{{races.Results[0].position }} <br/>
+          Points : {{races.Results[0].points}}<br/>
+          Status : {{races.Results[0].status}}<br/>
+          Fastest Lap<br/>
+          Rank: {{races.Results[0].FastestLap.rank}}<br/>
+          lap: {{races.Results[0].FastestLap.lap}}<br/>
+          Time: {{races.Results[0].FastestLap.Time.time}}<br/>
+      </td>
+    </tr>
+  </table>
+
+ </section> 
